@@ -1,0 +1,15 @@
+package routines;
+import org.apache.commons.*;
+import java.util.regex.Pattern;
+
+public class auxiliar {
+
+    public static String getSubDir(String event_filename,String carpeta_origen,String filename) {
+    	filename = filename.trim();   
+    	String subdir_name = event_filename.replace(carpeta_origen, "").replace(filename, "");
+        if (subdir_name.endsWith("\\"))
+        	subdir_name = subdir_name.substring(0, subdir_name.length() - 1);
+       
+    	return subdir_name;
+    }
+}
